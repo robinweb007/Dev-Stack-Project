@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { FaStar } from "react-icons/fa";
+import type { Itype } from "./type";
+interface CardProps {
+  technologie: Itype;
+  onAdd: (technology: Itype) => void;
+}
 
-export function Card({ technologie }) {
+
+export function Card({ technologie,onAdd }) {
   const [selected, setselected] = useState(false)
   return (
     <div className="max-w-sm bg-white rounded-2xl border border-gray-100 p-6 shadow-sm flex flex-col justify-between space-y-4">
@@ -43,7 +49,10 @@ export function Card({ technologie }) {
       </div>
 
       <button
-        onClick={() => setselected(true)}
+        onClick={() => {
+          setselected(true);
+          onAdd(technologie);
+        }}
         disabled={selected === true ? true : false}
         className={`w-full rounded-xl ${
           selected

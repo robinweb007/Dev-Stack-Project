@@ -1,4 +1,4 @@
-import { use } from "react";
+import { use, useState } from "react";
 import type { Itype } from "./type";
 import { Card } from "./card";
 import Stack from "./stack";
@@ -9,7 +9,10 @@ interface technologieProps {
 
 function Technologies({ technologiePormise }: technologieProps) {
   const technologies = use(technologiePormise);
-  console.log(technologies);
+  const [selectedTechnologies, setSelectedTechnologies] = useState<Itype[]>([]);
+  const handleAddToStack = (technology: Itype) => {
+  setSelectedTechnologies((prev) => [...prev, technology]);}
+
   return (
     <div className="container mx-auto">
       <h3 className="text-[36px] font-extrabold">
@@ -24,12 +27,12 @@ function Technologies({ technologiePormise }: technologieProps) {
       <div className="grid md:grid-cols-4 gap-4">
         <div className="md:col-span-3 grid md:grid-cols-3 gap-4">
           {technologies.map((technologie: Itype) => (
-            <Card technologie={technologie}></Card>
+            <Card technologie={technologie} onAdd={handleAddToStack}></Card>
           ))}
         </div>
 
         <div className="col-span-1">
-          <Stack selectedTechnologies ={[]}/>
+          <Stack selectedTechnologies={selectedTechnologies} />
         </div>
       </div>
     </div>

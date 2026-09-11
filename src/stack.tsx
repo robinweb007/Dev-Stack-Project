@@ -1,7 +1,7 @@
 import type { Itype } from "./type";
 
 export interface StackProps {
-  selectedTechnologies:Itype[];
+  selectedTechnologies: Itype[];
 }
 
 export default function Stack({ selectedTechnologies }: StackProps) {
@@ -10,9 +10,7 @@ export default function Stack({ selectedTechnologies }: StackProps) {
       {/* Heading */}
       <h2 className="text-[28px] font-bold text-[#0F172A]">Your Stack</h2>
 
-      <p className="mt-1 text-[18px] text-[#94A3B8]">
-        {selectedTechnologies.length} Technology Selected
-      </p>
+      <p className="mt-1 text-[18px] text-[#94A3B8]">{selectedTechnologies.length} Technology Selected</p>
 
       {/* Selected Technology Cards */}
       <div className="mt-7 space-y-2">
