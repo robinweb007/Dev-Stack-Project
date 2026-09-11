@@ -1,4 +1,8 @@
+import { useState } from "react";
+import { FaStar } from "react-icons/fa";
+
 export function Card({ technologie }) {
+  const [selected, setselected] = useState(false)
   return (
     <div className="max-w-sm bg-white rounded-2xl border border-gray-100 p-6 shadow-sm flex flex-col justify-between space-y-4">
       <div className="flex items-center justify-between">
@@ -31,13 +35,23 @@ export function Card({ technologie }) {
         </span>
 
         <div className="flex items-center space-x-1 font-bold text-gray-800">
-          <span className="text-amber-400">★</span>
+          <span className="text-amber-400">
+            <FaStar />
+          </span>
           <span>{technologie?.rating}</span>
         </div>
       </div>
 
-      <button className="w-full rounded-xl bg-gradient-to-r from-[#D81B7E]  to-[#7C3AED] hover:bg-slate-800 hover:textwhi text-white font-medium py-3 rounded-xl transition-colors mt-2">
-        Add to Stack
+      <button
+        onClick={() => setselected(true)}
+        disabled={selected === true ? true : false}
+        className={`w-full rounded-xl ${
+          selected
+            ? "bg-gray-200 text-black"
+            : "bg-gradient-to-r from-[#D81B7E] to-[#7C3AED] text-white"
+        } font-medium py-3 rounded-xl transition-colors mt-2`}
+      >
+        {selected === true ? "Selected" : "Add to Stack"}
       </button>
     </div>
   );

@@ -1,6 +1,7 @@
 import { use } from "react";
 import type { Itype } from "./type";
 import { Card } from "./card";
+import Stack from "./stack";
 
 interface technologieProps {
   technologiePormise: Promise<Itype[]>;
@@ -27,7 +28,9 @@ function Technologies({ technologiePormise }: technologieProps) {
           ))}
         </div>
 
-        <div className="col-span-1">site bar</div>
+        <div className="col-span-1">
+          <Stack selectedTechnologies ={[]}/>
+        </div>
       </div>
     </div>
   );
