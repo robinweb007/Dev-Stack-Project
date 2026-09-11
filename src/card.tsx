@@ -1,9 +1,6 @@
-import type { Itype } from "./type";
-
-export function Card({technologie}:{technologie:Itype}) {
+export function Card({ technologie }) {
   return (
     <div className="max-w-sm bg-white rounded-2xl border border-gray-100 p-6 shadow-sm flex flex-col justify-between space-y-4">
-      {/* topsection icon*/}
       <div className="flex items-center justify-between">
         <img
           src={technologie?.icon}
@@ -15,7 +12,6 @@ export function Card({technologie}:{technologie:Itype}) {
         </span>
       </div>
 
-      {/* description}
       <div>
         <h2 className="text-2xl font-bold text-gray-900 mb-2">
           {technologie?.name}
@@ -25,7 +21,6 @@ export function Card({technologie}:{technologie:Itype}) {
         </p>
       </div>
 
-      {/* Caategory and reating*/}
       <div className="flex items-center justify-between pt-2 text-sm">
         <span className="bg-gray-100 text-gray-600 px-3 py-1 rounded-md font-medium">
           {technologie?.category}
@@ -41,11 +36,9 @@ export function Card({technologie}:{technologie:Itype}) {
         </div>
       </div>
 
-      {/* btn */}
-      <button className="w-full rounded-xl bg-gradient-to-r from-[#D81B7E]  to-[#7C3AED] text-white font-medium py-3 mt-2">
+      <button className="w-full rounded-xl bg-gradient-to-r from-[#D81B7E]  to-[#7C3AED] hover:bg-slate-800 hover:textwhi text-white font-medium py-3 rounded-xl transition-colors mt-2">
         Add to Stack
       </button>
     </div>
   );
-
 }
