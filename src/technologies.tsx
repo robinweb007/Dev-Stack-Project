@@ -9,9 +9,20 @@ interface technologieProps {
 
 function Technologies({ technologiePormise }: technologieProps) {
   const technologies = use(technologiePormise);
+  // stact count add
   const [selectedTechnologies, setSelectedTechnologies] = useState<Itype[]>([]);
   const handleAddToStack = (technology: Itype) => {
   setSelectedTechnologies((prev) => [...prev, technology]);}
+  // remove all info stact count
+  const handleRemoveAll = () => {
+    setSelectedTechnologies([]);
+  };
+  // just one element delete
+  const handleRemoveOne = (id: number) => {
+    setSelectedTechnologies((prev) =>
+      prev.filter((technology) => technology.id !== id),
+    );
+  };
 
   return (
     <div className="container mx-auto">
@@ -32,7 +43,11 @@ function Technologies({ technologiePormise }: technologieProps) {
         </div>
 
         <div className="col-span-1">
-          <Stack selectedTechnologies={selectedTechnologies} />
+          <Stack
+            selectedTechnologies={selectedTechnologies}
+            onRemoveAll={handleRemoveAll}
+            onRemoveOne={handleRemoveOne}
+          />
         </div>
       </div>
     </div>
