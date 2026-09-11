@@ -17,9 +17,16 @@ export default function Stack({ selectedTechnologies, onRemoveAll, onRemoveOne }
         {selectedTechnologies.length} Technology Selected
       </p>
 
+
       {/* Selected Technology Cards */}
       <div className="mt-7 space-y-2">
-        {selectedTechnologies.map((technology) => (
+
+        {selectedTechnologies.length === 0 ? (
+    <p className="py-10 text-center border rounded-2xl p-4 text-[#94A3B8]">
+      Your stack is empty
+    </p>
+  ) :
+        selectedTechnologies.map((technology) => (
           <div
             key={technology.id}
             className="flex items-center justify-between rounded-xl border border-[#CBD5E1] px-5 py-4"
@@ -45,7 +52,7 @@ export default function Stack({ selectedTechnologies, onRemoveAll, onRemoveOne }
 
             {/* Remove btn */}
             <button
-              onClick={()=>onRemoveOne(technology.id)}
+              onClick={() => onRemoveOne(technology.id)}
               className="text-[32px] font-light text-[#94A3B8]"
             >
               <IoCloseOutline />
@@ -55,14 +62,14 @@ export default function Stack({ selectedTechnologies, onRemoveAll, onRemoveOne }
       </div>
 
       {/* Remove All btn */}
-      {
+      {selectedTechnologies.length > 0 && (
         <button
           onClick={onRemoveAll}
           className="mt-20 w-full rounded-xl border border-red-300 py-3 text-[20px] font-semibold text-red-500"
         >
           Remove All
         </button>
-      }
+      )}
     </div>
   );
 }

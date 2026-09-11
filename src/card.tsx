@@ -7,8 +7,10 @@ interface CardProps {
 }
 
 
-export function Card({ technologie,onAdd }) {
-  const [selected, setselected] = useState(false)
+export function Card({ technologie, onAdd }: CardProps) {
+  const [selected, setselected] = useState(false);
+  // toast add
+
   return (
     <div className="max-w-sm bg-white rounded-2xl border border-gray-100 p-6 shadow-sm flex flex-col justify-between space-y-4">
       <div className="flex items-center justify-between">
@@ -52,6 +54,7 @@ export function Card({ technologie,onAdd }) {
         onClick={() => {
           setselected(true);
           onAdd(technologie);
+          
         }}
         disabled={selected === true ? true : false}
         className={`w-full rounded-xl ${

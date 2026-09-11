@@ -21,7 +21,7 @@ const technologiePormise =technologiefetech()
       <Nav></Nav>
       <Banner></Banner>
 
-      <Suspense fallback={<p>Loading..</p>}>
+      <Suspense fallback={<p className='text-2xl font-bold text-center'>Loading..</p>}>
         <Technologies technologiePormise={technologiePormise}></Technologies>
       </Suspense>
     </>
