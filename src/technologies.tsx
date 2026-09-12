@@ -2,6 +2,7 @@ import { use, useState } from "react";
 import type { Itype } from "./type";
 import { Card } from "./card";
 import Stack from "./stack";
+import { toast } from "react-toastify";
 
 interface technologieProps {
   technologiePormise: Promise<Itype[]>;
@@ -9,18 +10,13 @@ interface technologieProps {
 
 function Technologies({ technologiePormise }: technologieProps) {
   const technologies = use(technologiePormise);
-  const [showMessage, setShowMessage] = useState(false);
-  const [message, setMessage] = useState("");
+
   // stact count add
   const [selectedTechnologies, setSelectedTechnologies] = useState<Itype[]>([]);
   const handleAddToStack = (technology: Itype) => {
     setSelectedTechnologies((prev) => [...prev, technology]);
-      setMessage(`${technology.name} added to stack!`);
-    setShowMessage(true);
+    toast.success(`${technology.name} added to Successfully!`);
 
-    setTimeout(() => {
-      setShowMessage(false);
-    }, 3000);
   };
 
   // remove all info stact count
@@ -36,16 +32,7 @@ function Technologies({ technologiePormise }: technologieProps) {
 
   return (
     <>
-      {showMessage && (
-        <div className="fixed bottom-5 right-5 z-50 rounded-lg bg-gradient-to-r from-[#D81B7E]  to-[#7C3AED]  px-6 py-4 text-white shadow-lg">
-          {message}
-        </div>
-      )}
-      {showMessage && (
-        <div className="fixed bottom-5 right-5 z-50 rounded-lg bg-gradient-to-r from-[#D81B7E]  to-[#7C3AED]  px-6 py-4 text-white shadow-lg">
-          Technology added to stack!
-        </div>
-      )}
+
       <div className="container mx-auto">
         <h3 className="text-[36px] font-extrabold">
           Explore the {}

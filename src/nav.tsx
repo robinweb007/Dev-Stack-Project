@@ -1,7 +1,7 @@
 import Logo from "./assets/logo-text.png";
 export function Nav() {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto sticky top-0 z-50 shadow-sm bg-white">
       <nav className="flex justify-between items-center px-4 py-3">
         {" "}
         {/* Hamburger - Mobile */} <div className="md:hidden"> ☰ </div>
