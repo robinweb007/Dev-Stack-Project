@@ -29,7 +29,7 @@ export function Nav() {
           <button className="font-semibold text-[18px] text-[#334155]">
             <a href="">Sign In</a>
           </button>{" "}
-          <button className="btn rounded-full bg-[#D91B7E] text-white ml-4">
+          <button className="btn rounded-full bg-gradient-to-r from-[#D81B7E]  to-[#7C3AED] text-white ml-4">
             Sign Up
           </button>
         </div>

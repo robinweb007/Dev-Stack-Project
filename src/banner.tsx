@@ -1,7 +1,7 @@
 import banner from "./assets/banner-stack.png";
 export function Banner() {
   return (
-    <div className="md:flex items-center mx-auto container">
+    <div className="md:flex items-center mx-auto container pb-3">
       {/* banner text section */}
       <div className="md:text-left">
         <h1 className="md:text-[60px] text-2xl text-[#0F172A] font-bold md:font-extrabold">
