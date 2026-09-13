@@ -4,6 +4,7 @@ import type { Itype } from "./type";
 interface CardProps {
   technologie: Itype;
   onAdd: (technology: Itype) => void;
+  
 }
 
 
@@ -54,7 +55,7 @@ export function Card({ technologie, onAdd }: CardProps) {
         onClick={() => {
           setselected(true);
           onAdd(technologie);
-          
+
         }}
         disabled={selected === true ? true : false}
         className={`w-full rounded-xl ${

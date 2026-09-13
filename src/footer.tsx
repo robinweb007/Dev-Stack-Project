@@ -4,7 +4,7 @@ export function Footer() {
     <>
       {/* footer */}
       <div
-        className="md:mt-20 mb-4  mx-auto md:flex md:justify-around
+        className="md:mt-20 mb-4  mx-auto md:flex md:justify-around items-center
     "
       >
         {/* 1st section */}
