@@ -3,7 +3,7 @@ export interface Itype {
   name: string;
   category:number;
   description: string;
-  image: string;
+  icon: string;
   rating:number;
   difficulty: string;
   badge: string
